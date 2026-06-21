@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>开云 · 日常之外的意义</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', Helvetica, Arial, sans-serif;
+      background-color: #f5f3ef;
+      color: #1e1c1a;
+      line-height: 1.6;
+    }
+
+    /* hero 深色区 */
+    .hero {
+      background: #0f2027;
+      background: linear-gradient(145deg, #0f2027 0%, #1f3b47 100%);
+      color: #e7e6e0;
+      padding: 4rem 2rem 4.5rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 480;
+      letter-spacing: 2px;
+      margin-bottom: 0.75rem;
+      color: #f5f0e8;
+    }
+
+    .hero .sub {
+      font-size: 1.15rem;
+      max-width: 620px;
+      margin: 0 auto 0.25rem;
+      color: #cbd5cc;
+      font-weight: 320;
+    }
+
+    .hero .meta-line {
+      font-size: 0.9rem;
+      color: #94a9a5;
+      margin-top: 0.8rem;
+      border-top: 1px solid #2f4c54;
+      display: inline-block;
+      padding-top: 0.5rem;
+    }
+
+    /* 通用容器 */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* 浅色区域段落排版 */
+    section {
+      padding: 2.8rem 0;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 450;
+      margin-bottom: 1.1rem;
+      border-left: 4px solid #b48a5c;
+      padding-left: 0.75rem;
+      color: #2c3a3f;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 0.8rem;
+    }
+
+    .txt-card {
+      background: #ffffffd6;
+      backdrop-filter: blur(2px);
+      padding: 1.4rem 1.6rem;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+      border: 1px solid #e5dfd6;
+    }
+
+    .txt-card p {
+      margin-bottom: 0.6rem;
+    }
+
+    .txt-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .highlight {
+      color: #b48a5c;
+      font-weight: 480;
+    }
+
+    .inline-link {
+      color: #b48a5c;
+      text-decoration: none;
+      border-bottom: 1px dotted #b48a5c80;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .inline-link:hover {
+      color: #8c6c44;
+      border-bottom: 1px solid #8c6c44;
+    }
+
+    .btn-outline {
+      display: inline-block;
+      border: 1px solid #b48a5c;
+      background: transparent;
+      padding: 0.55rem 1.8rem;
+      border-radius: 60px;
+      font-size: 0.95rem;
+      color: #2c3a3f;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+      margin-top: 0.8rem;
+    }
+
+    .btn-outline:hover {
+      background: #b48a5c;
+      color: #faf8f2;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem 2rem;
+    }
+
+    .faq-item {
+      background: #f0ede6;
+      border-radius: 16px;
+      padding: 1rem 1.3rem;
+    }
+
+    .faq-item strong {
+      display: block;
+      font-weight: 520;
+      margin-bottom: 0.2rem;
+      font-size: 1rem;
+      color: #1f3b47;
+    }
+
+    .faq-item p {
+      font-size: 0.92rem;
+      color: #2f3e40;
+    }
+
+    .bottom-links {
+      border-top: 1px solid #d8d0c4;
+      padding: 1.8rem 0 2.5rem;
+      text-align: center;
+      background: #ece8e0;
+    }
+
+    .bottom-links p {
+      font-size: 0.95rem;
+      color: #3a4d4b;
+    }
+
+    .bottom-links a {
+      color: #3f6257;
+      text-decoration: none;
+      border-bottom: 1px dotted #7d9b8c;
+    }
+
+    .bottom-links a:hover {
+      border-bottom: 1px solid #3f6257;
+    }
+
+    /* 响应式 */
+    @media (max-width: 700px) {
+      .hero h1 { font-size: 1.8rem; }
+      .two-col { grid-template-columns: 1fr; gap: 1.3rem; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .container { padding: 0 1.2rem; }
+      section { padding: 2rem 0; }
+    }
+
+    @media (max-width: 400px) {
+      .hero { padding: 2.8rem 1rem; }
+      .txt-card { padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero 区 -->
+  <header class="hero">
+    <h1>开云 · 让片刻沉淀为可能</h1>
+    <p class="sub">探索生活的另一种质地，在流动的日常里，找到属于自己的节奏。</p>
+    <p class="meta-line">始于契机 · 归于宁静</p>
+  </header>
+
+  <!-- 优势区：两个卡片 -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">为什么值得停留</h2>
+      <div class="two-col">
+        <div class="txt-card">
+          <p><span class="highlight">✦ 简洁但不简单</span><br>我们相信好的产品应当是自然的延展——没有冗余的装饰，却能在细节中传递温度。无论是视觉语言还是交互节奏，都经过谨慎的取舍。</p>
+          <p>在 <a href="https://m-global-kai-yun.com" class="inline-link">开云</a> 构建的视角里，秩序与松弛从来不是对立面，而是一种可以持续生长的平衡。</p>
+        </div>
+        <div class="txt-card">
+          <p><span class="highlight">✦ 留白即内容</span><br>现代生活充斥着密集的信号，而真正的品质往往藏在呼吸的间歇中。我们推崇适度的信息架构，让每个模块都有足够的安静空间。</p>
+          <p>如果你也认同“少即是多”，或许会发现这里的语境恰好契合你的偏好。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 说明区：更具体的场景与感受 -->
+  <section style="background: #eae5db; padding: 2.8rem 0;">
+    <div class="container">
+      <h2 class="section-title">一个关于「可能性」的切片</h2>
+      <div style="display: flex; flex-direction: column; gap: 1.4rem;">
+        <div class="txt-card" style="background: #faf8f4;">
+          <p><strong style="color: #1f3b47;">◈ 不是工具，而是一种陪伴</strong><br>
+          无论是阅读、书写还是单纯的浏览，我们希望每个动作都像推开一扇窗——光线自然流入，而不是被迫注视屏幕的亮斑。许多人在使用后反馈，这里“没有催促感”。</p>
+          <p>这份从容来自对功能边界的清醒认知。我们不去追逐所有热点，只聚焦于最核心的体验：让信息以友好的方式被看见。</p>
+        </div>
+        <div class="txt-card" style="background: #faf8f4;">
+          <p><strong style="color: #1f3b47;">◈ 日常中的仪式感</strong><br>
+          泡一杯茶，或只是安静地坐几分钟，再点开页面——你会发现连加载动画都像一片落叶的轨迹。所有的反馈都经过打磨，不会用刺眼的效果惊扰你的注意力。</p>
+          <p>这正是 <a href="https://m-global-kai-yun.com" class="inline-link">开云</a> 希望传递的：技术应当服务于人的感知，而不是反过来。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ 摘要区 -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">常见疑问 · 摘要</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <strong>开云 的理念是什么？</strong>
+          <p>营造一个不被算法裹挟、注重内容本质与视觉呼吸感的空间。不囤积用户注意力，只提供有价值的片刻。</p>
+        </div>
+        <div class="faq-item">
+          <strong>是否需要注册或下载？</strong>
+          <p>无需任何注册，也不要求安装应用。打开浏览器即可使用，所有功能都对访客完全开放。</p>
+        </div>
+        <div class="faq-item">
+          <strong>内容更新频率如何？</strong>
+          <p>保持克制而稳定的节奏。每周会有少量精选内容更新，重点关注质量而非数量，避免信息过载。</p>
+        </div>
+        <div class="faq-item">
+          <strong>遇到问题如何反馈？</strong>
+          <p>站内没有复杂的客服系统，但你可以通过页面底部的邮箱获得人工回应。我们通常会在一个工作日内回复。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 底部链接区 -->
+  <footer class="bottom-links">
+    <div class="container">
+      <p>一个更安静的去处 · 由 <a href="https://m-global-kai-yun.com">开云</a> 维护</p>
+      <p style="margin-top: 0.6rem; font-size: 0.85rem; color: #64756b;">若你恰好路过，不妨小坐片刻。</p>
+    </div>
+  </footer>
+
+</body>
+</html>
