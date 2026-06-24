@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+    <title>爱游戏 · 杂志专题</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f7fafc;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #1e293b;
+            line-height: 1.7;
+            padding: 0 1rem 3rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .page {
+            max-width: 1120px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* ===== hero / 横幅 ===== */
+        .hero {
+            margin-top: 2.8rem;
+            padding: 3rem 2rem 2.8rem;
+            background: linear-gradient(145deg, #e0f2f1 0%, #ccf0f0 100%);
+            border-radius: 40px 40px 24px 24px;
+            box-shadow: 0 8px 24px rgba(13, 110, 110, 0.08);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -20%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(56, 178, 172, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: #0d4f4c;
+            margin-bottom: 0.6rem;
+            position: relative;
+        }
+
+        .hero .sub {
+            font-size: 1.15rem;
+            color: #2a6b6b;
+            opacity: 0.85;
+            font-weight: 350;
+            max-width: 520px;
+            margin: 0.4rem auto 0;
+            line-height: 1.5;
+            border-top: 1px solid rgba(56, 178, 172, 0.25);
+            padding-top: 0.7rem;
+            display: inline-block;
+        }
+
+        /* ===== 卡片式网格 ===== */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.8rem;
+            margin: 2.5rem 0 2rem;
+        }
+
+        @media (min-width: 640px) {
+            .grid-cards {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.5rem;
+            }
+        }
+
+        .card {
+            background: white;
+            padding: 1.8rem 1.6rem 2.2rem;
+            border-radius: 28px;
+            box-shadow: 0 6px 18px rgba(0, 40, 40, 0.04);
+            transition: transform 0.2s, box-shadow 0.25s;
+            border: 1px solid rgba(94, 191, 184, 0.15);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(0, 80, 80, 0.08);
+            border-color: rgba(56, 178, 172, 0.3);
+        }
+
+        .card .icon {
+            font-size: 2.2rem;
+            margin-bottom: 0.3rem;
+            opacity: 0.8;
+            line-height: 1;
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin: 0.3rem 0 0.6rem;
+            color: #155e5b;
+            letter-spacing: -0.01em;
+        }
+
+        .card p {
+            font-size: 0.98rem;
+            color: #2d4a4a;
+            flex: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .card .meta {
+            font-size: 0.8rem;
+            color: #5a7b7b;
+            border-top: 1px solid #e3eeed;
+            padding-top: 0.6rem;
+            margin-top: 0.4rem;
+            letter-spacing: 0.01em;
+        }
+
+        /* ===== 背景说明 ===== */
+        .background-note {
+            background: #eef6f5;
+            padding: 2rem 2rem 2.2rem;
+            border-radius: 30px;
+            margin: 1.2rem 0 2.5rem;
+            border-left: 6px solid #3fa39d;
+        }
+
+        .background-note h2 {
+            font-size: 1.5rem;
+            font-weight: 450;
+            color: #135c58;
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .background-note p {
+            color: #1f4846;
+            max-width: 720px;
+            margin-bottom: 0.6rem;
+        }
+
+        .background-note .quiet {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* ===== 一段自然嵌入链接的段落 ===== */
+        .inline-link-section {
+            background: white;
+            padding: 1.8rem 2rem;
+            border-radius: 36px;
+            margin: 2rem 0 2.2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            border: 1px solid #dcefec;
+            font-size: 1.04rem;
+        }
+
+        .inline-link-section a {
+            color: #1b7a74;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1.5px solid #8ccbc5;
+            padding-bottom: 0.05em;
+            transition: border-color 0.2s;
+        }
+
+        .inline-link-section a:hover {
+            border-bottom-color: #0f5e59;
+        }
+
+        /* ===== 页尾提示 ===== */
+        .footer-note {
+            margin-top: 2.8rem;
+            padding: 1.4rem 1.8rem;
+            background: #eaf3f2;
+            border-radius: 60px 60px 30px 30px;
+            text-align: center;
+            font-size: 0.95rem;
+            color: #295a57;
+            border: 1px solid #b7ddd9;
+        }
+
+        .footer-note span {
+            opacity: 0.8;
+        }
+
+        .footer-note .dot {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background: #3fa39d;
+            border-radius: 50%;
+            margin: 0 0.5rem;
+            vertical-align: middle;
+        }
+
+        /* ===== 响应式微调 ===== */
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero {
+                padding: 2rem 1.2rem;
+                border-radius: 28px;
+            }
+            .card {
+                padding: 1.5rem 1.2rem;
+            }
+            .inline-link-section {
+                padding: 1.4rem 1.2rem;
+            }
+        }
+
+        /* ===== 小装饰 ===== */
+        .badge-dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: #48b5ae;
+            border-radius: 2px;
+            margin-right: 0.3rem;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- hero 横幅 -->
+        <header class="hero">
+            <h1>爱游戏 · 杂志</h1>
+            <div class="sub">一个安静的入口  ·  一份克制的介绍</div>
+        </header>
+
+        <!-- 背景说明 -->
+        <section class="background-note">
+            <h2>
+                <span class="badge-dot"></span> 页面背景
+            </h2>
+            <p>
+                这个站点并不是一个喧哗的游戏门户。它更像一处可以随时停下脚步、翻阅几页的案头读物。  
+                从早期几个人的兴趣小组，到如今聚合了数百款风格各异的作品，<strong>爱游戏</strong>始终保持着同样的节奏——不追逐热点，不堆叠弹窗，只是安静地陈列那些值得花时间体验的数字创作。
+            </p>
+            <p class="quiet">
+                每一款收录的游戏都经过人工筛选与简短评注，没有算法推荐，也没有排行榜负担。
+            </p>
+        </section>
+
+        <!-- 三段自然介绍：卡片网格 -->
+        <div class="grid-cards">
+            <div class="card">
+                <div class="icon">🎲</div>
+                <h3>稳定的入口</h3>
+                <p>
+                    域名多年来未曾更换，页面结构也尽量保持简洁。无论使用手机还是桌面浏览器，<br>打开即是同样的版式与节奏。没有强制更新，也没有突然消失的功能。
+                </p>
+                <div class="meta">— 结构克制，意图明确</div>
+            </div>
+            <div class="card">
+                <div class="icon">🧩</div>
+                <h3>多样的收藏</h3>
+                <p>
+                    从像素小品到叙事向短篇，从解谜到模拟经营，每一款都经过实际体验。每篇介绍只有一段话、一张截图，以及一个安静的开始按钮。
+                </p>
+                <div class="meta">— 重体验，轻包装</div>
+            </div>
+            <div class="card">
+                <div class="icon">📖</div>
+                <h3>翻阅感</h3>
+                <p>
+                    整个页面就像一本没有页码的杂志。你可以从任何一篇文章读起，也可以随时合上。没有弹窗催促你「立即体验」，也没有倒计时。
+                </p>
+                <div class="meta">— 适合慢慢浏览</div>
+            </div>
+        </div>
+
+        <!-- 自然嵌入链接的段落（符合第5/6/7条） -->
+        <div class="inline-link-section">
+            <p>
+                如果你对上面提到的任意一款作品感到好奇，或者只是想看看最近有人分享了什么有趣的短篇，<br>
+                可以直接前往 <a href="https://home-online-igame.com">爱游戏</a> 的主页——它一直放在那里，样式朴素，加载也快。  
+                那里没有注册门槛，也没有推送通知，只有一个按时间排列的列表和几张截图。  
+                偶尔更新，但从不吵闹。
+            </p>
+        </div>
+
+        <!-- FAQ 摘要 (轻量) -->
+        <div style="background: #f0f7f6; padding: 1.5rem 1.8rem; border-radius: 28px; margin: 1.5rem 0 0.8rem;">
+            <h3 style="font-weight: 450; font-size: 1.1rem; color: #125754; margin-bottom: 0.5rem;">❓ 常见疑问摘要</h3>
+            <ul style="list-style: none; padding-left: 0; color: #2c5956; font-size: 0.95rem;">
+                <li style="margin-bottom: 0.5rem;">· 是否需要下载客户端？—— 不需要，所有内容均在浏览器内呈现。</li>
+                <li style="margin-bottom: 0.5rem;">· 更新频率如何？—— 没有固定周期，通常每月补充几款。</li>
+                <li style="margin-bottom: 0.5rem;">· 是否收录商业大作？—— 很少，更偏好独立、有想法的作品。</li>
+            </ul>
+        </div>
+
+        <!-- 页尾访问提示 -->
+        <footer class="footer-note">
+            <span>✻ 你可以随时通过浏览器访问</span>
+            <span class="dot"></span>
+            <span>没有广告，没有追踪</span>
+            <span class="dot"></span>
+            <span>只是一个关于游戏的个人杂志</span>
+        </footer>
+    </div>
+</body>
+</html>
